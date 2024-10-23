@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    <nav class="bg-blue-500 p-4 text-white">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold">Tutor Dashboard</h1>
+            <div>
+                <a href="#pending-requests" class="mx-2">Pending Requests</a>
+                <a href="#profile" class="mx-2">Profile</a>
+                <a href="#messages" class="mx-2">Messages</a>
+                <a href="#notifications" class="mx-2">Notifications</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto p-4">
+
+        <section id="pending-requests" class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Pending Tutor Requests</h2>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div id="requests" class="space-y-4">
+                    <div class="bg-gray-50 p-4 rounded-lg shadow flex justify-between items-center">
+                        <div>
+                            <h3 class="text-xl font-semibold">Request from: Student Name</h3>
+                            <p>Contact: example@example.com</p>
+                            <p>Subject: Math</p>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="accept-button bg-green-500 text-white py-1 px-2 rounded-md hover:bg-green-600" data-request-id="1">Accept</button>
+                            <button class="decline-button bg-red-500 text-white py-1 px-2 rounded-md hover:bg-red-600" data-request-id="1">Decline</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="profile" class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Profile Management</h2>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <form id="profile-form">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="tutor-name" class="block text-sm font-medium text-gray-700">Name</label>
+                            <input type="text" id="tutor-name" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                        <div>
+                            <label for="tutor-email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" id="tutor-email" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                        <div>
+                            <label for="tutor-phone" class="block text-sm font-medium text-gray-700">Phone</label>
+                            <input type="tel" id="tutor-phone" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                        <div>
+                            <label for="subjects-taught" class="block text-sm font-medium text-gray-700">Subjects Taught</label>
+                            <textarea id="subjects-taught" rows="3" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">Update Profile</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="messages" class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Messages</h2>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <ul class="list-disc list-inside">
+                    <li class="mb-2">New message from Student Name: "I need a tutor for Math."</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="notifications" class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Notifications</h2>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <ul class="list-disc list-inside">
+                    <li class="mb-2">You have new pending requests.</li>
+                    <li class="mb-2">Your profile has been updated successfully.</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Handle profile update form submission
+        document.getElementById('profile-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const profileData = {
+                name: document.getElementById('tutor-name').value,
+                email: document.getElementById('tutor-email').value,
+                phone: document.getElementById('tutor-phone').value,
+                subjectsTaught: document.getElementById('subjects-taught').value,
+            };
+
+            const response = await fetch('YOUR_PROFILE_UPDATE_API_ENDPOINT', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    // Include authentication token if needed
+                },
+                body: JSON.stringify(profileData),
+            });
+
+            if (response.ok) {
+                alert('Profile updated successfully!');
+            } else {
+                alert('Failed to update profile. Please try again later.');
+            }
+        });
+
+        // Example function to accept or decline requests
+        async function handleRequest(action, requestId) {
+            const response = await fetch(`YOUR_REQUEST_API_ENDPOINT/${action}/${requestId}`, {
+                method: 'POST',
+                headers: {
+                    // Include authentication token if needed
+                },
+            });
+
+            if (response.ok) {
+                alert(`Request ${action}ed successfully!`);
+                // Optionally refresh the request list or update the UI
+            } else {
+                alert(`Failed to ${action} request. Please try again later.`);
+            }
+        }
+
+        // Add event listeners for accept/decline buttons
+        document.querySelectorAll('.accept-button').forEach(button => {
+            button.addEventListener('click', () => handleRequest('accept', button.dataset.requestId));
+        });
+
+        document.querySelectorAll('.decline-button').forEach(button => {
+            button.addEventListener('click', () => handleRequest('decline', button.dataset.requestId));
+        });
+    </script>
+
+</body>
+</html>
