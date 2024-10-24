@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    background-color: gold;
+    height: 100%;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.user{
+    margin: .5rem;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+input{
+    height: 20px;
+}
+
+textarea{
+    height: 40px;
+}
+
+input,textarea{
+    width: 15rem;
+}
+
+h1{
+    font-size: 4rem;
+    margin: 0;
+}
+

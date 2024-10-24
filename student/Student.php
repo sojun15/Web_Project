@@ -12,10 +12,10 @@
     <main>
         <section class="container">
             <h1>Tuition Post</h1>
-            <form id="signup" method="post" action="register.php">
+            <form id="signup" method="post" action="Post.php">
                 <div class="user">
-                    <label for="student-id">UserId:</label><br>
-                    <input type="number" name="student-id" id="student-id" placeholder="User ID" required>
+                    <label for="student-id">Student Id:</label><br>
+                    <input type="number" name="student-id" id="student-id" placeholder="Student ID" required>
                 </div>
 
                 <div class="user">
@@ -24,8 +24,13 @@
                 </div>
 
                 <div class="user">
-                    <label for="prefered-subject">subject:</label><br>
+                    <label for="prefered-subject">Interested subjects:</label><br>
                     <textarea type="text" name="prefered-subject" id="prefered-subject" placeholder="prefered-subject" required></textarea>
+                </div>
+
+                <div class="user">
+                    <label for="location">Location:</label><br>
+                    <input type="text" name="location" id="location" placeholder="location" required>
                 </div>
 
                 <div class="user">
@@ -34,24 +39,22 @@
                 </div>
 
                 <div class="user">
-                    <label for="learning-goal">Interested Subject:</label><br>
-                    <textarea type="text" name="learning-goal" id="learning-goal" placeholder="learning-goal" required></textarea>
+                    <label for="learning-goal">Learning goal:</label><br>
+                    <textarea type="text" name="learning-goal" id="learning-goal" placeholder="learning-goal"></textarea>
                 </div>
 
                 <div class="user">
-                    <label for="maximum-budget">maximum:</label><br>
+                    <label for="maximum-budget">Tuition Fee:</label><br>
                     <input type="text" name="maximum-budget" id="maximum-budget" placeholder="maximum-budget" required>
                 </div>
 
-                <!-- <div class="user">
+                <div class="user">
                     <label for="teaching-style">Teaching Type:</label>
                     <select id="teaching-style" name="teaching-style">
-                        <option>Online</option>
-                        <option>In-person</option>
+                        <option>Single</option>
                         <option>Group</option>
-                        <option>Individual</option>
                     </select>
-                </div> -->
+                </div>
 
                 <div class="user">
                     <label for="contact-details">contact-details:</label><br>

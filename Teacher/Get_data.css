@@ -1,0 +1,28 @@
+.single{
+    border: .5rem dotted black;
+    background-color: blue;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+img{
+    border-radius: 50%;
+    height: 50px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+input{
+    height: 20px;
+}
