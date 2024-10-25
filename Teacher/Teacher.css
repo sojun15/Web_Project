@@ -1,0 +1,16 @@
+img{
+    border-radius: 50%;
+    width: 50px;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+a{
+    font-size: large;
+    text-decoration: none;
+}
