@@ -349,7 +349,7 @@ body {
 #signup_error p {
   color: red;
   padding: 5px 0;
-  background-color: rgb(192, 163, 163);
+  background-color: rgb(243, 214, 214);
   padding: 10px;
   border-radius: 5px;
   border: red solid 1px;
@@ -364,5 +364,3 @@ body {
   border: green solid 1px;
   margin: 5px 0;
 }
-
-
