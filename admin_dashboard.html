@@ -46,13 +46,9 @@
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-xl font-bold">Admin Dashboard</h1>
             <div>
-                <a href="#overview" class="mx-2">Overview</a>
+                 <a href="./index.html" class="mx-2">Home</a>
                 <a href="#user-management" class="mx-2">User Management</a>
                 <a href="#requests" class="mx-2">Tuition Requests</a>
-                <a href="#payments" class="mx-2">Payments</a>
-                <a href="#messages" class="mx-2">Messages</a>
-                <a href="#reviews" class="mx-2">Reviews</a>
-                <a href="#reports" class="mx-2">Reports</a>
                 <button id="logoutBtn" class="logout-btn mx-2">Logout</button>
 
             </div>
@@ -61,149 +57,88 @@
 
     <main class="container mx-auto p-4">
 
-        <section id="overview" class="mb-8">
-            <h2 class="text-2xl font-bold mb-4 text-cyan-50 ">Overview</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="bg-white p-6 rounded-lg shadow-md hover:bg-purple-500 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out hover:text-fuchsia-500">
-                    <h3 class="text-xl font-bold text-rose-600">Total Students</h3>
-                    <p class="text-3xl font-semibold text-blue-100">120</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-500 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out hover:text-fuchsia-500">
-                    <h3 class="text-xl font-bold text-rose-600">Total Tutors</h3>
-                    <p class="text-3xl font-semibold text-blue-100 ">45</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md hover:bg-green-500 hover:shadow-lg hover:scale-105 transition duration-300 ease-in-out hover:text-fuchsia-500">
-                    <h3 class="text-xl font-bold text-rose-600">Total Requests</h3>
-                    <p class="text-3xl font-semibold text-blue-100">300</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md col-span-3">
-                    <h3 class="text-xl font-bold mb-2">Student & Tutor Distribution</h3>
-                    <!-- Resize the pie chart using Tailwind classes -->
-                    <div class="w-98 h-120">
-                        <canvas id="pieChart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Other Sections... -->
-        <section id="user-management" class="mb-8">
-            <h2 class="text-2xl font-bold mb-4 text-cyan-50  ">User Management</h2>
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <table class="min-w-full table-auto">
-                    <thead>
-                        <tr>
-                            <th class="px-4 py-2">Name</th>
-                            <th class="px-4 py-2">Role</th>
-                            <th class="px-4 py-2">Email</th>
-                            <th class="px-4 py-2">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="border px-4 py-2">Raihan</td>
-                            <td class="border px-4 py-2">Student</td>
-                            <td class="border px-4 py-2">raihan@example.com</td>
-                            <td class="border px-4 py-2">
-                                <button class="bg-red-500 text-white py-1 px-2 rounded-md hover:bg-red-600">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="border px-4 py-2">Karim</td>
-                            <td class="border px-4 py-2">Tutor</td>
-                            <td class="border px-4 py-2">karim@example.com</td>
-                            <td class="border px-4 py-2">
-                                <button class="bg-red-500 text-white py-1 px-2 rounded-md hover:bg-red-600">Delete</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <section id="requests" class="mb-8">
-            <h2 class="text-2xl font-bold mb-4 text-cyan-50  ">Tuition Request Management</h2>
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <table class="min-w-full table-auto">
-                    <thead>
-                        <tr>
-                            <th class="px-4 py-2">Student Name</th>
-                            <th class="px-4 py-2">Subject</th>
-                            <th class="px-4 py-2">Status</th>
-                            <th class="px-4 py-2">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="border px-4 py-2">Raihan</td>
-                            <td class="border px-4 py-2">Math</td>
-                            <td class="border px-4 py-2">Pending</td>
-                            <td class="border px-4 py-2">
-                                <button class="bg-green-500 text-white py-1 px-2 rounded-md hover:bg-green-600">Approve</button>
-                                <button class="bg-red-500 text-white py-1 px-2 rounded-md hover:bg-red-600">Reject</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
        
 
-        <section id="messages" class="mb-8">
-            <h2 class="text-2xl font-bold mb-4 text-cyan-50  ">Messaging System</h2>
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <table class="min-w-full table-auto">
-                    <thead>
-                        <tr>
-                            <th class="px-4 py-2">Sender</th>
-                            <th class="px-4 py-2">Message</th>
-                            <th class="px-4 py-2">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="border px-4 py-2">Raihan</td>
-                            <td class="border px-4 py-2">I need help with my tutor request.</td>
-                            <td class="border px-4 py-2">
-                                <button class="bg-blue-500 text-white py-1 px-2 rounded-md hover:bg-blue-600">Reply</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+        <!-- Other Sections... -->
+       <section id="user-management" class="mb-8">
+    <h2 class="text-2xl font-bold mb-4 text-cyan-50">User Message</h2>
+    <div class="bg-white p-6 rounded-lg shadow-md">
+        <!-- Search Box -->
+        <div class="mb-4">
+            <input
+                type="text"
+                id="search-box"
+                placeholder="Search by User name"
+                class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+            />
+        </div>
 
-        <section id="reviews" class="mb-8">
-            <h2 class="text-2xl font-bold mb-4 text-cyan-50  ">Feedback and Reviews</h2>
+        <!-- User Table -->
+        <table class="min-w-full table-auto">
+            <thead>
+                <tr>
+                    <th class="px-4 py-2">Name</th>
+                    <th class="px-4 py-2">Role</th>
+                    <th class="px-4 py-2">Email</th>
+                    <th class="px-4 py-2">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="user-table-body">
+                <!-- Data will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+        <section id="requests" class="mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-cyan-50  ">Tutor payment approve </h2>
             <div class="bg-white p-6 rounded-lg shadow-md">
                 <table class="min-w-full table-auto">
                     <thead>
                         <tr>
                             <th class="px-4 py-2">Tutor Name</th>
-                            <th class="px-4 py-2">Rating</th>
-                            <th class="px-4 py-2">Feedback</th>
+                            <th class="px-4 py-2">Status</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="border px-4 py-2">Karim</td>
-                            <td class="border px-4 py-2">5/5</td>
-                            <td class="border px-4 py-2">Excellent tutor, very helpful.</td>
+                            <td class="border px-4 py-2"></td>
+                            <td class="border px-4 py-2">Unpaid</td>
+                            <td class="border px-4 py-2">
+                                <button id="payment-approve" class="bg-green-500 text-white py-1 px-2 rounded-md hover:bg-green-600">Payment Ppprove</button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <!-- Reporting and Analytics -->
-        <section id="reports" class="mb-8">
-            <h2 class="text-2xl font-bold mb-4 text-cyan-50  ">Complain</h2>
+
+         <section id="requests" class="mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-cyan-50  ">Responded Teacher Data</h2>
             <div class="bg-white p-6 rounded-lg shadow-md">
-                <p>Generate reports on platform usage, revenue, and performance.</p>
-                <button class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">Generate Report</button>
+                <table class="min-w-full table-auto">
+                    <thead>
+                        <tr>
+                            <th class="px-4 py-2">Name</th>
+                            <th class="px-4 py-2">Subject Expertise</th>
+                            <th class="px-4 py-2">Preferred Location</th>
+                            <th class="px-4 py-2">Contact</th>
+                            <th class="px-4 py-2">Rate</th>
+                            <th class="px-4 py-2">Responded User</th>
+                        </tr>
+                    </thead>
+                    <tbody id="respondedTeachersTableBody">
+                        <!-- Data will be populated here by JavaScript -->
+                    </tbody>
+                </table>
             </div>
         </section>
+
+
+       
+        
 
 
     </main>
@@ -216,56 +151,8 @@
         });
     </script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const ctx = document.getElementById('pieChart').getContext('2d');
-            const pieChart = new Chart(ctx, {
-                type: 'pie',
-                data: {
-                    labels: ['Students with Tutor', 'Students without Tutor', 'Tutors with Tuitions', 'Tutors without Tuitions'],
-                    datasets: [{
-                        label: 'Distribution',
-                        data: [80, 40, 35, 10], // Example data
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false, // Adjusts the aspect ratio to fit the container
-                    plugins: {
-                        legend: {
-                            position:'left', // Set to 'top', 'bottom', 'left', or 'right'
-                            labels: {
-                                font: {
-                                    size: 18 // Change font size here
-                                },
-                                padding: 35, // Adjust spacing between the labels
-                            }
-                        },
-                        tooltip: {
-                            enabled: true,
-                            callbacks: {
-                                label: function(tooltipItem) {
-                                    return tooltipItem.label + ': ' + tooltipItem.raw + ' students/tutors';
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-        });
+    <script src="./scripts/admin.js"></script>
+        
     </script>
 </body>
 </html>
